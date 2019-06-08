@@ -1,0 +1,15 @@
+name: worker
+
+environment:
+  sdk: '<3.0.0'
+
+dependencies:
+  cl_base:
+    git: git@repo.centryl.org:centryl/cl_base.git
+  cl_annotation:
+    git: git@repo.centryl.org:centryl/cl_annotation.git
+
+dev_dependencies:
+  test: any
+  cl_dev:
+    git: git@repo.centryl.org:centryl/cl_dev.git

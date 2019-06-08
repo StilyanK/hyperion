@@ -1,0 +1,102 @@
+
+[4/8/2019 21:31:10 INFO]
+Hyperion started!
+[4/8/2019 21:34:30 INFO]
+Hyperion stopped!
+[4/14/2019 01:18:36 INFO]
+Hyperion started!
+[4/14/2019 01:35:45 INFO]
+Hyperion stopped!
+[4/14/2019 23:18:20 INFO]
+Hyperion started!
+[4/14/2019 23:22:43 SEVERE]
+Exception
+/car/item/save
+PostgreSQLSeverity.error 42703: column "car_id" of relation "workers" does not exist 
+INSERT INTO "workers" ("car_id", "name") VALUES (DEFAULT, DEFAULT) RETURNING *:
+{}
+
+[4/14/2019 23:23:33 INFO]
+Hyperion stopped!
+[4/14/2019 23:23:37 INFO]
+Hyperion started!
+[4/14/2019 23:23:43 SEVERE]
+Exception
+/car/item/save
+PostgreSQLSeverity.error 42P01: relation "cars" does not exist 
+INSERT INTO "cars" ("car_id", "name") VALUES (DEFAULT, DEFAULT) RETURNING *:
+{}
+
+[4/14/2019 23:24:58 INFO]
+Hyperion stopped!
+[4/14/2019 23:25:03 INFO]
+Hyperion started!
+[4/14/2019 23:25:10 SEVERE]
+Exception
+/car/item/save
+PostgreSQLSeverity.error 42703: column "name" of relation "cars" does not exist 
+INSERT INTO "cars" ("car_id", "name") VALUES (DEFAULT, DEFAULT) RETURNING *:
+{}
+
+[4/14/2019 23:28:15 INFO]
+Hyperion stopped!
+[4/14/2019 23:28:20 INFO]
+Hyperion started!
+[4/15/2019 00:01:46 INFO]
+Hyperion stopped!
+[4/15/2019 00:01:52 INFO]
+Hyperion started!
+[4/15/2019 00:16:48 INFO]
+Hyperion stopped!
+[4/15/2019 00:16:53 INFO]
+Hyperion started!
+[4/15/2019 00:19:06 INFO]
+Hyperion stopped!
+[4/15/2019 00:19:11 INFO]
+Hyperion started!
+[4/15/2019 00:19:15 SEVERE]
+Exception
+/car/collection/get
+PostgreSQLSeverity.error 42703: column "name" does not exist 
+SELECT "cars".*, COUNT(*) OVER() AS __total__
+ FROM "cars"
+ ORDER BY name ASC
+ LIMIT 50:
+{}
+
+[4/15/2019 00:20:29 SEVERE]
+Exception
+/car/collection/get
+PostgreSQLSeverity.error 42703: column "name" does not exist 
+SELECT "cars".*, COUNT(*) OVER() AS __total__
+ FROM "cars"
+ ORDER BY name ASC
+ LIMIT 50:
+{}
+
+[4/15/2019 00:45:45 INFO]
+Hyperion stopped!
+[4/15/2019 00:50:36 INFO]
+Hyperion started!
+[4/15/2019 01:01:27 INFO]
+Hyperion stopped!
+[4/19/2019 22:36:57 INFO]
+Hyperion started!
+[4/19/2019 22:39:18 INFO]
+Hyperion stopped!
+[4/20/2019 14:38:25 INFO]
+Hyperion started!
+[4/20/2019 14:51:31 INFO]
+Hyperion stopped!
+[4/20/2019 14:51:36 INFO]
+Hyperion started!
+[4/20/2019 14:59:54 INFO]
+Hyperion stopped!
+[4/23/2019 11:57:16 INFO]
+Hyperion started!
+[4/23/2019 11:59:53 INFO]
+Hyperion stopped!
+[4/24/2019 10:13:45 INFO]
+Hyperion started!
+[4/24/2019 10:14:44 INFO]
+Hyperion stopped!

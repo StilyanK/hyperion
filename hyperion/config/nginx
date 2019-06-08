@@ -1,0 +1,51 @@
+# Generate config from this template file:
+# <project_path> pub run cl_install:gen_nginx > config/centryl-nginx
+
+# Nginx image filter declarations - resize and cache images
+server {
+    listen 127.0.0.1:<port_media>;
+
+    set $path       <path>;
+
+    location ~ ^/(media|tmp)/image(\d+)x(\d+)/(.*)$ {
+        alias                       $path/$1/$4;
+        image_filter                resize $2 $3;
+        image_filter_jpeg_quality   90;
+        image_filter_buffer         10M;
+    }
+}
+
+# Front/Centryl panel declarations
+server {
+    listen 443 ssl http2;
+
+    set $path           <path>;
+    set $pass           http://127.0.0.1:<port>;
+    set $pass_api       http://127.0.0.1:<port_api>;
+    set $pass_media     http://127.0.0.1:<port_media>;
+
+    server_name <site>;
+    access_log  <path>/log/nginx/access.log;
+    error_log   <path>/log/nginx/error.log;
+
+    ssl                 on;
+    ssl_certificate     /etc/nginx/ssl/server.crt;
+    ssl_certificate_key /etc/nginx/ssl/server.key;
+
+    #<nginx-dev>
+    include <path>/config/nginx-panel;
+}
+
+# Forward any www.<site> requests on port 443 to <site>
+server {
+    listen 443 ssl http2;
+    server_name www.<site>;
+    rewrite ^ https://<site>$request_uri permanent;
+}
+
+# Forward any <site> and www.<site> requests on port 80 to <site> on port 443
+server {
+    listen 80;
+    server_name <site> www.<site>;
+    rewrite ^ https://<site>$request_uri permanent;
+}
